@@ -1,0 +1,8 @@
+pull_request_rules:
+  - name: automatic merge on approval
+    conditions:
+      - check-success=continuous-integration/fake-ci
+      - "#approved-reviews-by>=1"
+    actions:
+      merge:
+        method: merge

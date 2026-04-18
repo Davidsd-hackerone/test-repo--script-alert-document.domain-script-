@@ -1,8 +1,9 @@
 pull_request_rules:
-  - name: "Exploit"
-    description: "><details/open/ontoggle=alert(document.domain)>"
+  - name: automatic merge on approval
     conditions:
-      - base=main
+      - check-success=continuous-integration/fake-ci
+      - "#approved-reviews-by>=1"
     actions:
-      comment:
-        message: "Test"
+      merge:
+        method: merge
+priority_rules: []
